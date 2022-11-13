@@ -232,5 +232,13 @@ namespace GildedRoseTests
             Items[0] = app.UpdateConjuredItem(Items[0]); ;
             Assert.Equal(4, Items[0].Quality);
         }
+        [Fact]
+        public void UpdateConjuredItem_Function_Should_Degrade_Quality_At_Twice_The_Normal_Rate_After_Sell_In_Date()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 6 } };
+            GildedRose app = new GildedRose(Items);
+            Items[0] = app.UpdateConjuredItem(Items[0]); ;
+            Assert.Equal(2, Items[0].Quality);
+        }
     }
 }
