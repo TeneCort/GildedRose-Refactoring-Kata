@@ -16,10 +16,7 @@ namespace GildedRoseKata
             {
                 if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (item.Quality > 0)
-                    {
-                        item.Quality = item.Quality - 1;
-                    }
+                    item.Quality = item.Quality - 1;
                 }
                 else
                 {
@@ -50,10 +47,8 @@ namespace GildedRoseKata
                     {
                         if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
                         {
-                            if (item.Quality > 0)
-                            {
-                                item.Quality = item.Quality - 1;
-                            }
+                            item.Quality = item.Quality - 1;
+                            
                         }
                         else
                         {
@@ -68,6 +63,9 @@ namespace GildedRoseKata
 
                 // Hard set quality threshold to 50 in case it's higher
                 item.Quality = item.Quality >= 50 ? 50 : item.Quality;
+
+                // Hard set quality threshold to 0 in case it's lower
+                item.Quality = item.Quality <= 0 ? 0 : item.Quality;
 
                 // Sulfuras quality is always 80
                 if (item.Name == "Sulfuras, Hand of Ragnaros")
