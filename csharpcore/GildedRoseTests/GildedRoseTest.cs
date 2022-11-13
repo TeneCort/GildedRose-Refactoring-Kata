@@ -214,5 +214,15 @@ namespace GildedRoseTests
             Items[0] = app.UpdateBackstagePass(Items[0]); ;
             Assert.Equal(-1, Items[0].SellIn);
         }
+
+        // Conjured Item Tests
+        [Fact]
+        public void UpdateConjuredItem_Function_Should_Lower_Sell_In_Date()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
+            GildedRose app = new GildedRose(Items);
+            Items[0] = app.UpdateConjuredItem(Items[0]); ;
+            Assert.Equal(2, Items[0].SellIn);
+        }
     }
 }
