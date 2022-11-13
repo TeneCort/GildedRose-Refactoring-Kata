@@ -133,7 +133,14 @@ namespace GildedRoseTests
             Items[0] = app.UpdateAgedBrie(Items[0]);
             Assert.Equal(2, Items[0].Quality);
         }
-
+        [Fact]
+        public void UpdateAgedBrie_Function_Should_Lower_Sell_In()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            Items[0] = app.UpdateAgedBrie(Items[0]);
+            Assert.Equal(-1, Items[0].SellIn);
+        }
         // Backstage Passes Tests
         [Fact]
         public void Backstage_Passes_Quality_Should_Improve_At_Normal_Rate()
