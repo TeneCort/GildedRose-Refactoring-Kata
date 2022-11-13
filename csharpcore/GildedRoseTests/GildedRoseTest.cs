@@ -65,6 +65,14 @@ namespace GildedRoseTests
             Items[0] = app.UpdateGenericItem(Items[0]);
             Assert.Equal(8, Items[0].Quality);
         }
+        [Fact]
+        public void UpdateGenericItem_Function_Should_Lower_Item_Sell_In_Date()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 1, Quality = 10 } };
+            GildedRose app = new GildedRose(Items);
+            Items[0] = app.UpdateGenericItem(Items[0]);
+            Assert.Equal(0, Items[0].SellIn);
+        }
 
         // Sulfuras Tests
         [Fact]
