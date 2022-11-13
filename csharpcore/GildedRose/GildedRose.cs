@@ -18,10 +18,7 @@ namespace GildedRoseKata
                 {
                     if (item.Quality > 0)
                     {
-                        if (item.Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            item.Quality = item.Quality - 1;
-                        }
+                        item.Quality = item.Quality - 1;
                     }
                 }
                 else
@@ -55,10 +52,7 @@ namespace GildedRoseKata
                         {
                             if (item.Quality > 0)
                             {
-                                if (item.Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    item.Quality = item.Quality - 1;
-                                }
+                                item.Quality = item.Quality - 1;
                             }
                         }
                         else
@@ -71,10 +65,13 @@ namespace GildedRoseKata
                         item.Quality = item.Quality + 1;
                     }
                 }
-                
-                if(item.Name != "Sulfuras, Hand of Ragnaros")
-                    // Hard set quality threshold to 50 in case it's higher
-                    item.Quality = item.Quality >= 50 ? 50 : item.Quality;
+
+                // Hard set quality threshold to 50 in case it's higher
+                item.Quality = item.Quality >= 50 ? 50 : item.Quality;
+
+                // Sulfuras quality is always 80
+                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                    item.Quality = 80;
             }
         }
     }
