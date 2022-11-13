@@ -23,5 +23,13 @@ namespace GildedRoseTests
             app.UpdateQuality();
             Assert.Equal(-1, Items[0].SellIn);
         }
+        [Fact]
+        public void Item_Should_Not_Have_Negative_Quality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 1, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.Equal(0, Items[0].Quality);
+        }
     }
 }
