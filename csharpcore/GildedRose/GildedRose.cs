@@ -19,6 +19,10 @@ namespace GildedRoseKata
                 {
                     UpdateGenericItem(item);
                 }
+                else if (item.Name == "Aged Brie")
+                {
+                    UpdateAgedBrie(item);
+                }
                 else
                 {
                     item.Quality = item.Quality + 1;
@@ -47,10 +51,6 @@ namespace GildedRoseKata
                         if (item.Name != "Aged Brie")
                         {
                             item.Quality = item.Quality - item.Quality;
-                        }
-                        else
-                        {
-                            item.Quality = item.Quality + 1;
                         }
                     }
                 }
