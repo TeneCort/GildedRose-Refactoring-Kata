@@ -60,5 +60,14 @@ namespace GildedRoseTests
             Assert.Equal(80, Items[0].Quality);
         }
 
+        // Brie Tests
+        [Fact]
+        public void Brie_Quality_Should_Improve()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 1, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.Equal(1, Items[0].Quality);
+        }
     }
 }
