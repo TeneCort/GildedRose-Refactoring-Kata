@@ -14,45 +14,17 @@ namespace GildedRoseKata
         {
             foreach (var item in Items)
             {
-
-                if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert" && item.Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    UpdateGenericItem(item);
-                }
-                else if (item.Name == "Aged Brie")
+                if (item.Name == "Aged Brie")
                 {
                     UpdateAgedBrie(item);
                 }
-                else
+                else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    item.Quality = item.Quality + 1;
-
-                    if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                    {
-                        if (item.SellIn < 11)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-                    }
-                
-
-                    if (item.Name != "Sulfuras, Hand of Ragnaros")
-                    {
-                        item.SellIn = item.SellIn - 1;
-                    }
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Name != "Aged Brie")
-                        {
-                            item.Quality = item.Quality - item.Quality;
-                        }
-                    }
+                    UpdateBackstagePass(item);
+                }
+                else if (item.Name != "Sulfuras, Hand of Ragnaros")
+                {
+                    UpdateGenericItem(item);
                 }
 
                 // Hard set quality threshold to 50 in case it's higher
