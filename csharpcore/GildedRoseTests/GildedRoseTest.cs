@@ -39,5 +39,15 @@ namespace GildedRoseTests
             app.UpdateQuality();
             Assert.Equal(0, Items[0].Quality);
         }
+
+        //Common Item Tests
+        [Fact]
+        public void Common_Item_Should_Degrade_Twice_As_Fast_After_Sell_In_Date()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 10 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.Equal(8, Items[0].Quality);
+        }
     }
 }
