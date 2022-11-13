@@ -182,5 +182,13 @@ namespace GildedRoseTests
             Items[0] = app.UpdateBackstagePass(Items[0]);
             Assert.Equal(1, Items[0].Quality);
         }
+        [Fact]
+        public void UpdateBackstagePass_Function_Should_Improve_Quality_At_Twice_The_Normal_Rate_At_10_Days()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            Items[0] = app.UpdateBackstagePass(Items[0]);
+            Assert.Equal(2, Items[0].Quality);
+        }
     }
 }
