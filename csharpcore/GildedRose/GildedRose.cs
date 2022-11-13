@@ -71,6 +71,18 @@ namespace GildedRoseKata
                 if (item.Name == "Sulfuras, Hand of Ragnaros")
                     item.Quality = 80;
             }
+
+        }
+        public Item UpdateGenericItem(Item item)
+        {
+            if(item.SellIn > 0)
+                item.Quality -= 1;
+            else
+                item.Quality -= 2;
+
+            item.SellIn--;
+
+            return item;
         }
     }
 }
