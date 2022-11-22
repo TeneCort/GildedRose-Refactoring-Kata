@@ -11,6 +11,7 @@ It is done using TDD development to ensure the code is working during the rafcto
 
 ## How to use this Kata
 
-- Build the GildedRose Solution
-- Set the GildedRoseTests as startup project
+- Build the **GildedRose** Solution
+- Set the **GildedRoseTests** as startup project
+- Run the project, it will run the **TextTestFixture** file where a scenario is already present
 - To run the tests, click the **Test** tab then click on **Run all tests** option
