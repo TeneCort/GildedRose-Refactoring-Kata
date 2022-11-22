@@ -84,13 +84,9 @@ namespace GildedRoseKata
         public Item UpdateConjuredItem(Item item)
         {
             if(item.SellIn > 0)
-            {
                 item.Quality -= 2;
-            }
             else
-            {
                 item.Quality -= 4;
-            }
 
             item.SellIn--;
 
