@@ -43,6 +43,11 @@ namespace GildedRoseKata
             }
 
         }
+        /// <summary>
+        /// Updates Generic item quality
+        /// </summary>
+        /// <param name="item">Generic Item</param>
+        /// <returns></returns>
         public Item UpdateGenericItem(Item item)
         {
             if(item.SellIn > 0)
@@ -54,6 +59,11 @@ namespace GildedRoseKata
 
             return item;
         }
+        /// <summary>
+        /// Updates Aged Brie quality
+        /// </summary>
+        /// <param name="item">Aged Brie</param>
+        /// <returns></returns>
         public Item UpdateAgedBrie(Item item)
         {
             if (item.SellIn > 0)
@@ -65,6 +75,11 @@ namespace GildedRoseKata
 
             return item;
         }
+        /// <summary>
+        ///    Updates Backstage Pass quality
+        /// </summary>
+        /// <param name="item">Backstage Pass</param>
+        /// <returns></returns>
         public Item UpdateBackstagePass(Item item)
         {
             if (item.SellIn > 10)
@@ -80,7 +95,11 @@ namespace GildedRoseKata
 
             return item;
         }
-
+        /// <summary>
+        /// Updates Conjured Item quality
+        /// </summary>
+        /// <param name="item">Conjured Item</param>
+        /// <returns></returns>
         public Item UpdateConjuredItem(Item item)
         {
             if(item.SellIn > 0)
