@@ -22,6 +22,10 @@ namespace GildedRoseKata
                 {
                     UpdateBackstagePass(item);
                 }
+                else if (item.Name.Contains("Conjured"))
+                {
+                    UpdateConjuredItem(item);
+                }
                 else if (item.Name != "Sulfuras, Hand of Ragnaros")
                 {
                     UpdateGenericItem(item);
